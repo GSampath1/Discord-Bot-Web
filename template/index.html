@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RayBurn</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/rayburn.png" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header>
+
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="assets/images/rayburn.png" style="border-radius: 50%;" width="41" height="41" alt="RayBurn">
+      </a>
+
+      <div class="header-right">
+
+        <div class="header-nav-wrapper">
+
+          <button class="navbar-toggle-btn" data-navbar-toggle-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+          <nav class="navbar" data-navbar>
+
+            <ul class="navbar-list">
+
+              <li>
+                <a href="/" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#features" class="navbar-link">Features</a>
+              </li>
+
+              <li>
+                <a href="#dev" class="navbar-link">Developers</a>
+              </li>
+            </ul>
+
+          </nav>
+
+        </div>
+
+        <div class="header-actions">
+          {% if authorized == False %}
+            <a href="/auth/login"><button class="btn btn-login">Login</button></a>
+          {% endif %}
+          {% if authorized == True %}
+            <a href="/dashboard"><img src="{{user.avatar_url}}?size=2048" alt="{{user}}" width="32" height="32"></a>
+          {% endif %}
+        </div>
+
+      </div>  
+
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+
+    <article>
+
+      
+
+      <section class="hero">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 style="font-size: 90px;" class="h1 hero-title"><span class="rayburn-text">RayBurn</span></h1>
+
+            <p class="hero-text">The best bot in the server
+            </p>
+
+            <div class="btn-group">
+              <a href="/invite"><button class="btn btn-primary">Invite</button></a>
+              <a href="/auth/login"><button class="btn btn-secondary">Join Server</button></a>
+            </div>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="assets/images/rayburn.png"alt="RayBurn">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="about" id="features">
+        <div class="container">
+
+          <h2 class="h2 about-title">Bot Features</h2>
+
+          <ol class="about-list">
+
+            <li class="about-item">
+              <div class="about-card">
+
+                <div class="card-number">01</div>
+
+                <div class="card-icon">
+                  <i class="lni lni-wallet" style="font-size:60px;"></i>
+                </div>
+
+                <h3 class="h3 about-card-title">Economy</h3>
+
+                <p class="about-card-text">
+                  Bla bla
+                </p>
+
+              </div>
+            </li>
+
+            <li class="about-item">
+              <div class="about-card">
+
+                <div class="card-number">02</div>
+
+                <div class="card-icon">
+                  <i class="lni lni-shield" style="font-size:60px;"></i>
+                </div>
+
+                <h3 class="h3 about-card-title">Funny Jokes Collection</h3>
+
+                <p class="about-card-text">
+                 
+                  Bla bla
+                </p>
+
+              </div>
+            </li>
+
+            <li class="about-item">
+              <div class="about-card">
+
+                <div class="card-number">03</div>
+
+                <div class="card-icon">
+                  <i class="lni lni-shield" style="font-size:60px;"></i>
+                </div>
+
+                <h3 class="h3 about-card-title">Secured</h3>
+
+                <p class="about-card-text">
+                 Bla bla
+                </p>
+
+              </div>
+            </li>
+
+            <li class="about-item">
+              <div class="about-card">
+
+                <div class="card-number">04</div>
+
+                <div class="card-icon">
+                  <i class="lni lni-diamond-alt" style="font-size:60px;"></i>
+                </div>
+
+                <h3 class="h3 about-card-title">Premium</h3>
+
+                <p class="about-card-text">
+                  Bla bla
+                </p>
+
+              </div>
+            </li>
+
+          </ol>
+
+        </div>
+      </section>
+
+
+
+
+      <!-- 
+        - #Developers 
+      -->
+
+      <section class="top-seller" id="dev">
+        <div class="container">
+
+          <h2 class="h2 top-seller-title">
+            Our <span>Developers</span>
+            <ion-icon name="chevron-down"></ion-icon>
+          </h2>
+
+          <ol class="top-seller-list">
+
+            <li class="top-seller-item">
+              <a class="top-seller-card">
+
+                <div class="card-number">01</div>
+
+                <figure class="card-avatar">
+                  <img src="https://cdn.discordapp.com/avatars/984015688807100419/e3a149a62b6ec24d53b929bf82f9c11d.webp" alt="Brodband">
+
+                  <div class="avatar-badge">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                  </div>
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h5 card-title">Sampath#2505</h3>
+
+                  <data>Bot Owner</data>
+                </div>
+
+              </a>
+            </li>
+          </ol>
+
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="/" class="logo">
+            <img src="assets/images/rayburn.png" style="border-radius: 50%;" width="200" height="200" alt="RayBurn">
+          </a>
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <h3 class="h3 footer-item-title">RayBurn</h3>
+            </li>
+
+            <li class="footer-item">
+              <a href="/premium" class="footer-link">Premium</a>
+            </li>
+
+            <li class="footer-item">
+              <a href="/dashboard" class="footer-link">Dashboard</a>
+            </li>
+            <li class="footer-item">
+              <a href="https://discord.com/rayburn" class="footer-link">Support Server</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <h3 class="h3 footer-item-title">Company</h3>
+            </li>
+
+            <li class="footer-item">
+              <a href="#" class="footer-link">Terms of use</a>
+            </li>
+
+            <li class="footer-item">
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </li>
+
+          
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; Copyright RayBurn 2022 All rights reserved.
+          RayBurn is not affiliated with Discord.
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!--
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

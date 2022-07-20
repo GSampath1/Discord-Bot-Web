@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RayBurn</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../assets/images/rayburn.png" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header>
+
+    <div class="container">
+
+      <a href="/" class="logo">
+        <img src="../assets/images/rayburn.png" style="border-radius: 50%;" width="41" height="41" alt="RayBurn">
+      </a>
+
+      <div class="header-right">
+
+        <div class="header-nav-wrapper">
+
+          <button class="navbar-toggle-btn" data-navbar-toggle-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+          <nav class="navbar" data-navbar>
+
+            <ul class="navbar-list">
+
+              <li>
+                <a href="/" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="/#features" class="navbar-link">Features</a>
+              </li>
+
+              <li>
+                <a href="/#dev" class="navbar-link">Developers</a>
+              </li>
+            </ul>
+
+          </nav>
+
+        </div>
+
+        <div class="header-actions">
+          {% if authorized == False %}
+            <a href="/auth/login"><button class="btn btn-login">Login</button></a>
+          {% endif %}
+          {% if authorized == True %}
+            <a href="/dashboard"><img src="{{user.avatar_url}}?size=2048" alt="{{user}}" width="32" height="32"></a>
+          {% endif %}
+        </div>
+
+      </div>  
+
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+
+    <article>
+
+      <section class="top-seller" id="servers">
+        <div class="container">
+            <center>
+          <h2 class="h2 top-seller-title">
+            Select a server
+          </h2>
+        </center>
+          <ol class="top-seller-list">
+            {%for g1 in bot_guild%}
+            <li class="top-seller-item">
+              <a href="/guild/{{g1.id}}" class="top-seller-card">
+
+                <figure class="card-avatar">
+                  <img src="{{g1.icon_url}}" alt="{{g1.name}}">
+
+                  <div class="avatar-badge">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                  </div>
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h5 card-title">{{g1.name}}</h3>
+
+                  <data>Owner</data>
+                </div>
+
+              </a>
+            </li>
+            {% endfor %}
+            {%for g in guild%}
+                {%if g.permissions.administrator%}
+                    {%if not g in bot_guild %}
+            <li class="top-seller-item">
+                <a href="/auth/invite/{{g.id}}" class="top-seller-card">
+  
+                  <figure class="card-avatar">
+                    <img src="{{g.icon_url}}" alt="{{g.name}}">
+                  </figure>
+  
+                  <div class="card-content">
+                    <h3 class="h5 card-title">{{g.name}}</h3>
+  
+                    <data>Owner</data>
+                  </div>
+  
+                </a>
+              </li>
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+          </ol>
+
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
